@@ -1,0 +1,195 @@
+:root {
+  --height: 300px;
+  --width: 110px;
+  --quantity: 13;
+  --duration: 15s;
+  --highlight-color: #007bff;
+  --background-color: #fff;
+  --box-shadow-default: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --box-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.2);
+  --border-radius: 12px;
+  --transition-duration: 0.3s;
+}
+* {
+  box-sizing: border-box; /* Assure que le padding et la bordure ne dépassent pas la largeur */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: var(--background-color); /* Fond blanc */
+  color: #000; /* Texte noir */
+  font-family: 'Poppins', sans-serif;
+}
+
+.carousel {
+  width: 100%;
+  height: var(--height);
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #fff 10% 90%, transparent);
+}
+
+.carousel__list {
+  display: flex;
+  width: 100%;
+  min-width: calc(var(--width) * var(--quantity));
+  position: relative;
+  gap: 5px; 
+}
+
+.carousel__item {
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  left: 100%;
+  text-align: center;
+  font-size: 2.5rem; /* Ajuste la taille des icônes */
+  animation: slide var(--duration) linear infinite;
+  animation-delay: calc((var(--duration) / var(--quantity)) * (var(--position) - var(--quantity))) !important;
+  color: var(--highlight-color); /* Icônes en bleu */
+}
+
+.carousel[reverse="true"] .carousel__item {
+  animation: slideReverse var(--duration) linear infinite;
+}
+
+@keyframes slide {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--width) * -1);
+  }
+}
+
+@keyframes slideReverse {
+  from {
+    left: calc(var(--width) * -1);
+  }
+  to {
+    left: 100%;
+  }
+}
+
+h1 {
+  font-size: 40px;
+  color: #000; /* Titre noir */
+  margin-left: 80px;
+  margin-top: 40px;
+}
+
+.highlight {
+  color: var(--highlight-color); /* Texte important en bleu */
+  text-transform: uppercase;
+}
+
+p {
+  margin-left: 80px;
+  color: #555; /* Gris foncé pour le texte secondaire */
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+.navbar-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 5rem;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.6); /* Fond blanc semi-transparent */
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  border-bottom-right-radius: 25px;
+}
+
+.navbar-desktop a {
+  font-size: 18px;
+  color: #000; /* Texte noir */
+  text-decoration: none;
+  margin-left: 50px;
+  transition: color 0.3s;
+}
+
+.navbar-desktop a:hover {
+  color: var(--highlight-color); /* Texte bleu au survol */
+}
+
+.span {
+  margin-left: auto;
+  margin-right: 80px;
+}
+
+.span a {
+  background-color: var(--highlight-color); /* Bouton bleu */
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.span a:hover {
+  background-color: #0056b3; /* Bleu foncé au survol */
+}
+
+.box1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 80px; /* Réduit l'espacement supérieur */
+  padding: 0 80px;
+}
+
+.box1 div {
+  flex: 1;
+  margin-bottom: 100px;
+}
+.timeline{
+  height: 700px;
+  margin-left: 750px;
+  margin-bottom: 50px;
+  width: 10px;
+background-color: #007bff;
+  position: relative;
+}
+.cube{
+  margin-left: 120px;
+  width: 300px;
+  color: white;
+  height: 200px;
+  background-color: #d1d1d1;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Ombre ajoutée ici */
+  transition: all 0.3s ease; /* Transition pour un effet au survol */
+
+}
+.cube1{
+  margin-left: -400px;
+  width: 300px;
+  color: white;
+
+  height: 200px;
+  background-color: #d1d1d1;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Ombre ajoutée ici */
+  transition: all 0.3s ease; /* Transition pour un effet au survol */
+
+}
+.cube2{
+  margin-left: -400px;
+  width: 300px;
+  height: 200px;
+  color: white;
+  background-color: #d1d1d1;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Ombre ajoutée ici */
+  transition: all 0.3s ease; /* Transition pour un effet au survol */
+
+}
